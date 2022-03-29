@@ -1,0 +1,57 @@
+#img {
+    text-align: center;
+}
+
+$green: #20B2AA;
+$red: #FF6347;
+$white: #FFFFFF;
+$grey: #D3D3D3;
+
+body {
+font-family: 'Roboto', sans-serif;
+font-family: 'Rubik', sans-serif;
+}
+
+.title {
+   background-color: $grey;
+   padding: 1.2rem;
+   text-align: center;
+   font-size: 1rem;
+   border-radius: 5px;
+   border-bottom: 0.3rem solid darken($grey, 30%);
+   width: auto;
+}
+
+h2 {
+    text-align:center;
+}
+
+.textbox {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 99%;
+}
+
+
+.btn {
+   background-color: $green; 
+   font-size: 1rem;
+   font-weight: bold;
+   color: $white;
+   padding: 0.8rem;
+   border-radius: 5px;
+   border: none;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   width: 20%;
+   &--annuler {
+    background-color: $red;
+   }
+   &--ajouter {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+   }
+}
