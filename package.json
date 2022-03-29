@@ -1,0 +1,13 @@
+{
+  "name": "poch_lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d./css/prefixed/"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserlist": "last 4 versions"
+}
