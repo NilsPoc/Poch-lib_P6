@@ -12,27 +12,51 @@ font-family: 'Roboto', sans-serif;
 font-family: 'Rubik', sans-serif;
 }
 
+@mixin margin-LeftRight{
+   margin-left: 0.5rem;
+   margin-right: 0.5rem;
+}
+
+@mixin marginBottom{
+   margin-bottom: 0.6rem;
+}
+
 .title {
    background-color: $grey;
    padding: 1.2rem;
    text-align: center;
-   font-size: 1rem;
+   font-size: 1.2rem;
+   margin-top: 0.1rem;
    border-radius: 5px;
    border-bottom: 0.3rem solid darken($grey, 30%);
    width: auto;
+   @include margin-LeftRight;
+}
+
+.label {
+   width: auto;
+   font-size: 1.2rem;
+   @include margin-LeftRight;
 }
 
 h2 {
     text-align:center;
+    margin-top: 1.4rem;
 }
 
 .textbox {
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
-    width: 99%;
+    @include margin-LeftRight;
+    width: 90%;
+    @media (min-width: 600px){
+       width: 95%;
+    }
+    @media (min-width: 900px){
+        width: 98%;
+     }
 }
-
 
 .btn {
    background-color: $green; 
@@ -42,16 +66,30 @@ h2 {
    padding: 0.8rem;
    border-radius: 5px;
    border: none;
-   margin-top: 1rem;
-   margin-bottom: 1rem;
-   width: 20%;
+   margin-top: 0.6rem;
+   margin-bottom: 0.6rem;
+   margin-left: 0.5rem;
+   @include marginBottom;
+   width: 55%;
+   @media (min-width: 600px){
+    width: 35%;
+   }
+   @media (min-width: 900px){
+     width: 18%;
+   }
    &--annuler {
     background-color: $red;
+    margin-bottom: 1.2rem;
    }
    &--ajouter {
     display: block;
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1.8rem;
+    margin-bottom: 1.4rem;
    }
 }
+.btn:hover {
+   background-color: darken($grey, 50%); 
+   }

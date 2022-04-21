@@ -11,21 +11,44 @@ body {
   background-color: #D3D3D3;
   padding: 1.2rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  margin-top: 0.1rem;
   border-radius: 5px;
   border-bottom: 0.3rem solid #878787;
   width: auto;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.label {
+  width: auto;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 h2 {
   text-align: center;
+  margin-top: 1.4rem;
 }
 
 .textbox {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  width: 99%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 90%;
+}
+@media (min-width: 600px) {
+  .textbox {
+    width: 95%;
+  }
+}
+@media (min-width: 900px) {
+  .textbox {
+    width: 98%;
+  }
 }
 
 .btn {
@@ -36,18 +59,37 @@ h2 {
   padding: 0.8rem;
   border-radius: 5px;
   border: none;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  width: 20%;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.6rem;
+  width: 55%;
+}
+@media (min-width: 600px) {
+  .btn {
+    width: 35%;
+  }
+}
+@media (min-width: 900px) {
+  .btn {
+    width: 18%;
+  }
 }
 .btn--annuler {
   background-color: #FF6347;
+  margin-bottom: 1.2rem;
 }
 .btn--ajouter {
   display: block;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1.8rem;
+  margin-bottom: 1.4rem;
+}
+
+.btn:hover {
+  background-color: #545454;
 }
 
 /*# sourceMappingURL=style.css.map */
