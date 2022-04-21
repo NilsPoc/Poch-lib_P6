@@ -1,7 +1,7 @@
 # P6_Pochlib
 
 
-(Eng)  --- How to run ? ---------------------------------------------------------------
+(Eng) - How to run ? 
 
 1. Download zip file from github page 
 
@@ -9,7 +9,7 @@
 
 3. Right click "index.html" > "run with" > and choose your desired browser 
 
-(Fr)  --- Comment démarrer ? -----------------------------------------------------------
+(Fr)  - Comment démarrer ? 
 
 1. Téléchargez le fichier zip sur la page github du projet 
 
