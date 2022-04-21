@@ -149,3 +149,39 @@ docReady(function(){
     }); //btnAjouter
    
 }); //docReady
+
+// Save and delete favorite books
+function favoriteStorage(id){
+    
+    if (sessionStorage.getItem(id)) {
+        alert("Vous ne pouvez ajouter deux fois le même livre")
+    } else {
+
+        // Clone the searchedBook into favoriteBook
+        let favoriteBook = document.createElement("section");
+        favoriteBook.setAttribute("id", id);
+        favoriteBook = document.getElementById(id);
+        let searchedBook = document.getElementById(id);
+        let content = document.getElementById('content');
+        let bookmarkedBook = content.querySelector('h2');
+        favoriteBook = searchedBook.cloneNode(true);
+
+        // Replace (favorite)bookmark with delete(from favorite) bookmark and add favorite section into the DOM 
+		let deleteBookmark = document.createElement("div");
+        deleteBookmark.className = "deleteBookmark";
+        deleteBookmark.innerHTML = `<div class="deleteBookmark" id="${id}bookmark"><i class="fa-solid fa-trash-can fa-2x"></i></div>`;
+		let favoriteBookHeaderBookmark = favoriteBook.querySelector('header>div');
+		favoriteBookHeaderBookmark.replaceWith(deleteBookmark);
+		bookmarkedBook.after(favoriteBook);
+
+        //Delete favorite book
+        deleteBookmark.addEventListener('click', function deleteFavorite() {
+            favoriteBook.parentElement.removeChild(favoriteBook);
+            sessionStorage.removeItem(id);
+        });
+
+        //Save favorite book
+        sessionStorage.setItem(id, favoriteBook.innerHTML);
+
+     }   
+}; 
