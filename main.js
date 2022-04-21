@@ -185,3 +185,31 @@ function favoriteStorage(id){
 
      }   
 }; 
+
+// Display bookmarked favorites after web page refreshes 
+window.onload = function () {
+    
+    let content = document.getElementById('content');
+    let bookmarkedBook = content.querySelector('h2');
+   
+    for (let i = 0; i < sessionStorage.length; i++) {
+
+        let id = sessionStorage.key(i);
+        let favorite = sessionStorage.getItem(id);
+
+        if (id !="IsThisFirstTime_Log_From_LiveServer") {
+            let favoriteBook = document.createElement('section');
+            favoriteBook.setAttribute("id", id);
+            favoriteBook.className = "favoriteBook";
+            favoriteBook.innerHTML = favorite;
+            bookmarkedBook.after(favoriteBook);  
+
+            //add delete onclick to the bookmark on the main page
+            let favoriteBookHeaderBookmark = favoriteBook.querySelector('header>div');
+            favoriteBookHeaderBookmark.onclick = function deleteFavorite() {
+                favoriteBook.parentElement.removeChild(favoriteBook);
+                sessionStorage.removeItem(id);
+            };   
+        }
+    }    
+};
