@@ -95,7 +95,57 @@ docReady(function(){
         let mySearch = document.createElement("div");
         mySearch.id = 'mySearch';
         maListe.after(mySearch);
-        
+
+        // We use gbook api to get search results and display them into a result list 
+        btnRechercher.addEventListener('click', function() {
+           
+            var searchTitre = document.getElementById("titre").value; 
+            var searchAuteur = document.getElementById("auteur").value;
+
+            if ((searchTitre && searchAuteur) === "" || (searchTitre && searchAuteur) === null) {
+                alert("Veuillez compléter les deux champs de recherche");
+            }
+            else {
+                    
+                    fetch("https://www.googleapis.com/books/v1/volumes?q="+searchTitre+"+"+searchAuteur+"&printType=books" )
+                        .then(function (res) {
+                            return res.json();
+                            
+                         }).then(function (result) {                             
+                                var items = result.items;
+                                console.log(items);
+                                if (result.totalItems === 0) {
+                                    alert("Aucun livre n'a été trouvé");
+                                } else {
+                               let mySearch = document.getElementById('mySearch');
+                                items.forEach(book => {
+                                    var titre = book.volumeInfo.title;
+                                    var id = book.id;
+                                    var auteur = book.volumeInfo.authors;
+                                    var description = book?.searchInfo?.textSnippet?book.searchInfo.textSnippet:"Information manquante";
+                                    var image = book?.volumeInfo?.imageLinks?.thumbnail?book.volumeInfo.imageLinks.thumbnail:"logo/unavailable_mini.jpg"; 
+                                    var dataParametr = id+','+titre+','+auteur+','+description+','+image;                 
+                                    let searchedBook = document.createElement("section");
+                                    searchedBook.className = 'searchedBook';
+                                    searchedBook.setAttribute("id", id);
+                                    searchedBook.innerHTML =
+                                    `<header>
+                                            <div class="bookmark" id="${id}bookmark"><i class="fa-solid fa-book-open fa-2x" onclick = favoriteStorage('${id}')></i></div>  
+                                            <div class="titre">${titre}</div>
+                                            <div class="id">Id : ${id}</div>
+                                    </header>
+                                            <div class="auteur">Auteur(s) : ${auteur}</div>
+                                            <div class="description">${description}</div>
+                                            <div class="image"><img src="${image}"/></div>
+                                    `;
+                                    
+                                    mySearch.appendChild(searchedBook);  
+                                });
+                                }
+                         }); 
+                }
+        });
+
     }); //btnAjouter
    
 }); //docReady
