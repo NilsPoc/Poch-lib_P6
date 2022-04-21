@@ -92,4 +92,72 @@ h2 {
   background-color: #545454;
 }
 
+.searchedBook, .favoriteBook {
+  background-color: #bfbfbf;
+  border-radius: 6px;
+  font-size: 1rem;
+  justify-items: auto;
+  margin: 0.5rem;
+  padding: 0.8rem;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+  border: 0.2rem solid #a0a0a0;
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+}
+@media (max-width: 600px) {
+  .searchedBook, .favoriteBook {
+    width: 35%;
+  }
+}
+.searchedBook .bookmark, .searchedBook .deleteBookmark, .favoriteBook .bookmark, .favoriteBook .deleteBookmark {
+  display: flex;
+  justify-content: right;
+}
+.searchedBook .titre, .favoriteBook .titre {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+}
+@media (max-width: 600px) {
+  .searchedBook .titre, .favoriteBook .titre {
+    font-size: 0.8rem;
+  }
+}
+.searchedBook .id, .favoriteBook .id {
+  font-style: italic;
+  margin-bottom: 0.6rem;
+  text-align: left;
+  font-size: 0.8rem;
+}
+@media (max-width: 600px) {
+  .searchedBook .id, .favoriteBook .id {
+    font-size: 0.5rem;
+  }
+}
+.searchedBook .auteur, .favoriteBook .auteur {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .searchedBook .auteur, .favoriteBook .auteur {
+    font-size: 0.6rem;
+  }
+}
+.searchedBook .description, .favoriteBook .description {
+  text-align: justify;
+  margin-bottom: 0.6rem;
+}
+@media (max-width: 600px) {
+  .searchedBook .description, .favoriteBook .description {
+    font-size: 0.6rem;
+  }
+}
+.searchedBook .image, .favoriteBook .image {
+  display: center;
+}
+
 /*# sourceMappingURL=style.css.map */
