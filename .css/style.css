@@ -112,6 +112,7 @@ h2 {
   }
 }
 .searchedBook .bookmark, .searchedBook .deleteBookmark, .favoriteBook .bookmark, .favoriteBook .deleteBookmark {
+  float: right;
   display: flex;
   justify-content: right;
 }
